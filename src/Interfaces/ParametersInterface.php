@@ -8,6 +8,4 @@ interface ParametersInterface
         bool $transformBoolean,
         bool $removeNullValues
     ): array;
-
-    public static function fromArray(array $parameters);
 }
