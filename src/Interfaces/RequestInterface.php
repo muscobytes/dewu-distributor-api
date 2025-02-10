@@ -9,7 +9,7 @@ interface RequestInterface
 {
     public function __construct(
         string $accessToken,
-        RequestParametersInterface $parameters
+        ParametersInterface $parameters
     );
 
     public function getHttpMethod(): string;
