@@ -14,6 +14,6 @@ class SpuList extends Dto
 
     public static function fromArray(array $data): DtoInterface
     {
-        // TODO: Implement fromArray() method.
+        return new self($data);
     }
 }
