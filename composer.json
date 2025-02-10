@@ -1,0 +1,14 @@
+{
+    "name": "muscobytes/pozison-b2b-api-client",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Muscobytes\\PozisonB2bApiClient\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {}
+}
