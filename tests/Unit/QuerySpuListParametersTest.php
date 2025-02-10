@@ -67,7 +67,7 @@ class QuerySpuListParametersTest extends BaseTest
     public function testCreateQuerySpuListParametersDistSpuId()
     {
         $querySpuListParameters = new QuerySpuListParameters(
-            distSpuId: [2, 71, 10, 120 ]
+            distSpuId: [ 2, 71, 10, 120 ]
         );
         $this->assertIsArray($querySpuListParameters->distSpuId);
         $this->assertEquals([ 2, 71, 10, 120 ], $querySpuListParameters->distSpuId);
