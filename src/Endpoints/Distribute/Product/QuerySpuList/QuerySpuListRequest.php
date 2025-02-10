@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList;
+namespace Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList;
 
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Request;
 use Muscobytes\TakeadsApi\Traits\Methods\Post;

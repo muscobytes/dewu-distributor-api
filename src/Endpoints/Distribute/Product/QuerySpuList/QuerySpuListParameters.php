@@ -1,10 +1,10 @@
 <?php
 
-namespace Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList;
+namespace Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList;
 
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Parameters;
-use Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList\Enums\SeasonEnum;
-use Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList\Enums\StatusEnum;
+use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums\SeasonEnum;
+use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums\StatusEnum;
 
 class QuerySpuListParameters extends Parameters
 {

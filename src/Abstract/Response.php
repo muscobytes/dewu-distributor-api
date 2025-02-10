@@ -3,8 +3,8 @@
 namespace Muscobytes\Poizon\DistributionApiClient\Abstract;
 
 
-use Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList\QuerySpuListResponse;
-use Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList\SpuList;
+use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\QuerySpuListResponse;
+use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\SpuList;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\ResponseInterface;
 use Psr\Http\Message\ResponseInterface as HttpResponseInterface;
 

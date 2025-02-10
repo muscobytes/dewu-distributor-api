@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList\Enums;
+namespace Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums;
 
 enum SeasonEnum: string
 {

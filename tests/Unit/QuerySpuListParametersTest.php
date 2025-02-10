@@ -3,9 +3,9 @@
 namespace Muscobytes\Poizon\tests\Unit;
 
 
-use Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList\Enums\SeasonEnum;
-use Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList\Enums\StatusEnum;
-use Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList\QuerySpuListParameters;
+use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums\SeasonEnum;
+use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums\StatusEnum;
+use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\QuerySpuListParameters;
 use Muscobytes\Poizon\tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 
