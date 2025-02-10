@@ -3,46 +3,48 @@
 namespace Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList;
 
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Parameters;
+use Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList\Enums\SeasonEnum;
+use Muscobytes\Poizon\DistributionApiClient\Dto\Distribute\Product\QuerySpuList\Enums\StatusEnum;
 
 class QuerySpuListParameters extends Parameters
 {
     /**
-     * @param int $startId Pagination start ID
-     * @param int $pageSize Page size
-     * @param array $pwSpuId SPU ID
-     * @param array $distPuId Distributor's SPU ID
-     * @param string $dwSpuTitle Item name in Chinese
-     * @param string $distPusTitle Item name in English
-     * @param array $dwDesignerId Article number/Style ID
-     * @param array $distBrandName Brand name
-     * @param array $distCategory1Name Primary category
-     * @param array $distCategory2Name Secondary category
-     * @param array $distCategory3Name Tertiary category
-     * @param array $distFitPeopleName Target user
-     * @param string $season Season
-     * @param string $distStatus Status (PRODUCT_ON: Published, PRODUCT_OFF: Removed)
-     * @param int $modifyStartTime Modification start time, UTC timestamp in milliseconds
-     * @param int $modifyEndTime Modification end time, UTC timestamp in milliseconds
+     * @param int|null $startId Pagination start ID
+     * @param int|null $pageSize Page size
+     * @param array<int>|null $dwSpuId SPU ID
+     * @param array<int>|null $distSpuId Distributor's SPU ID
+     * @param string|null $dwSpuTitle Item name in Chinese
+     * @param string|null $distSpuTitle Item name in English
+     * @param array<string>|null $dwDesignerId Article number/Style ID
+     * @param array<string>|null $distBrandName Brand name
+     * @param array<string>|null $distCategory1Name Primary category
+     * @param array<string>|null $distCategory2Name Secondary category
+     * @param array<string>|null $distCategory3Name Tertiary category
+     * @param array<string>|null $distFitPeopleName Target user
+     * @param SeasonEnum|null $season Season
+     * @param StatusEnum|null $distStatus Status (PRODUCT_ON: Published, PRODUCT_OFF: Removed)
+     * @param int|null $modifyStartTime Modification start time, UTC timestamp in milliseconds
+     * @param int|null $modifyEndTime Modification end time, UTC timestamp in milliseconds
      * @param bool $querySku Return SKU info (Y or N)
      */
     public function __construct(
-        public int $startId,
-        public int $pageSize,
-        public array $pwSpuId,
-        public array $distPuId,
-        public string $dwSpuTitle,
-        public string $distPusTitle,
-        public array $dwDesignerId,
-        public array $distBrandName,
-        public array $distCategory1Name,
-        public array $distCategory2Name,
-        public array $distCategory3Name,
-        public array $distFitPeopleName,
-        public string $season,
-        public string $distStatus,
-        public int $modifyStartTime,
-        public int $modifyEndTime,
-        public bool $querySku
+        public ?int    $startId = null,
+        public ?int    $pageSize = null,
+        public ?array  $dwSpuId = null,
+        public ?array  $distSpuId = null,
+        public ?string $dwSpuTitle = null,
+        public ?string $distSpuTitle = null,
+        public ?array  $dwDesignerId = null,
+        public ?array  $distBrandName = null,
+        public ?array  $distCategory1Name = null,
+        public ?array  $distCategory2Name = null,
+        public ?array  $distCategory3Name = null,
+        public ?array  $distFitPeopleName = null,
+        public ?SeasonEnum $season = null,
+        public ?StatusEnum $distStatus = null,
+        public ?int    $modifyStartTime = null,
+        public ?int    $modifyEndTime = null,
+        public ?bool   $querySku = null
     )
     {
         //
