@@ -1,14 +1,29 @@
 {
-    "name": "muscobytes/pozison-b2b-api-client",
+    "name": "muscobytes/poizon-distribution-api-client",
+    "version": "0.0.1",
     "type": "library",
     "require-dev": {
-        "phpunit/phpunit": "^10.5"
+        "phpunit/phpunit": "^10.5",
+        "phpstan/phpstan": "^2.1",
+        "nyholm/psr7": "^1.8",
+        "symfony/http-client": "^6.4"
     },
     "autoload": {
         "psr-4": {
-            "Muscobytes\\PozisonB2bApiClient\\": "src/"
+            "Muscobytes\\Poizon\\DistributionApiClient\\": "src/"
         }
     },
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": ">=8.1",
+        "psr/http-client-implementation": "*",
+        "psr/http-factory-implementation": "*",
+        "php-http/discovery": "^1.20",
+        "psr/http-client": "^1.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
 }
