@@ -1,5 +1,6 @@
 {
     "name": "muscobytes/poizon-distribution-api-client",
+    "description": "",
     "version": "0.0.1",
     "type": "library",
     "require-dev": {
