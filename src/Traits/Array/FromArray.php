@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\Poizon\DistributionApiClient\Traits;
+namespace Muscobytes\Poizon\DistributionApiClient\Traits\Array;
 
 trait FromArray
 {

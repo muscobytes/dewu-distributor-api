@@ -32,13 +32,12 @@ abstract class Response implements ResponseInterface
     }
 
 
-    public function getPayload(): array
+    public function getPayload(): DtoInterface
     {
         /** @var DtoInterface $dtoClassName */
         $dtoClassName = $this->getDtoClass($this);
-        return array_map(
-            fn (array $item) => $dtoClassName::fromArray($item),
-            json_decode($this->getResponse()->getBody(), true)['data']
+        return $dtoClassName::fromArray(
+            json_decode($this->getResponse()->getBody(), true)
         );
     }
 }
