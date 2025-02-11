@@ -35,11 +35,12 @@ class Client
     }
 
 
-    public function createUri(RequestInterface $command): UriInterface
+    public function createUri(RequestInterface $request): UriInterface
     {
-        return $this->requestFactory->createUri($this->base_uri)
-            ->withPath($command->getUrlPath())
-            ->withQuery(http_build_query($command->getQueryParams()));
+        return $this->requestFactory
+            ->createUri($this->base_uri)
+            ->withPath($request->getUrlPath())
+            ->withQuery(http_build_query($request->getQueryParams()));
     }
 
 
