@@ -5,8 +5,8 @@ namespace Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\Q
 use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums\SeasonEnum;
 use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums\StatusEnum;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\DtoInterface;
-use Muscobytes\Poizon\DistributionApiClient\Traits\FromArray;
-use Muscobytes\Poizon\DistributionApiClient\Traits\ToArray;
+use Muscobytes\Poizon\DistributionApiClient\Traits\Array\FromArray;
+use Muscobytes\Poizon\DistributionApiClient\Traits\Array\ToArray;
 
 class Spu implements DtoInterface
 {

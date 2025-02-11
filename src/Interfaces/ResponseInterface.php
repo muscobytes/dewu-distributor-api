@@ -8,5 +8,5 @@ interface ResponseInterface
 {
     public function getResponse(): HttpResponseInterface;
 
-    public function getPayload(): array;
+    public function getPayload(): DtoInterface;
 }

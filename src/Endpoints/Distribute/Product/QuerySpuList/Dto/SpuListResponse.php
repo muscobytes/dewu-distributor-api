@@ -3,8 +3,8 @@
 namespace Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList;
 
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\DtoInterface;
-use Muscobytes\Poizon\DistributionApiClient\Traits\FromArray;
-use Muscobytes\Poizon\DistributionApiClient\Traits\ToArray;
+use Muscobytes\Poizon\DistributionApiClient\Traits\Array\FromArray;
+use Muscobytes\Poizon\DistributionApiClient\Traits\Array\ToArray;
 
 class SpuListResponse implements DtoInterface
 {
