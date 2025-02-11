@@ -12,7 +12,7 @@ abstract class Request implements RequestInterface
 
     private string $path = '';
 
-    private string $responseClass = '';
+    private string $responseClassName = '';
 
 
     public function __construct(
@@ -57,6 +57,6 @@ abstract class Request implements RequestInterface
 
     public function getResponse(ResponseInterface $response): Response
     {
-        return new $this->responseClass($response);
+        return new $this->responseClassName($response);
     }
 }

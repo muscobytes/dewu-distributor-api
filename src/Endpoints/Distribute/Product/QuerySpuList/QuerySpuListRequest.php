@@ -11,5 +11,5 @@ class QuerySpuListRequest extends Request
 
     protected string $path = '/distribute/product/querySpuList';
 
-    protected string $responseClass = QuerySpuListResponse::class;
+    protected string $responseClassName = QuerySpuListResponse::class;
 }
