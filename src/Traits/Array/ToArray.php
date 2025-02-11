@@ -15,6 +15,7 @@ trait ToArray
                 'boolean' => $transformBoolean ? $element ? 'true' : 'false' : $element,
                 'object' => match(get_class($element)) {
                     'DateTime' => $element->format($format),
+                    'DateTimeImmutable' => $element->format($format),
                     default => $element->toArray()
                 },
                 'array' => $this->transformArray($element, $transformBoolean),
