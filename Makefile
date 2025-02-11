@@ -6,7 +6,7 @@ PHP_VERSION := 8.1
 TAG := muscobytes/php-cli-$(PHP_VERSION)
 
 DOCKER_RUN := docker run -ti \
-				-v "./:/var/www/html"
+	-v "./:/var/www/html"
 
 .PHONY: help
 help:  ## Shows this help message
@@ -21,7 +21,7 @@ build:
 
 .PHONY: shell
 shell:
-	$(DOCKER_RUN) -e PHP_IDE_CONFIG="serverName=takeads-api-client" $(TAG) sh
+	$(DOCKER_RUN) -e PHP_IDE_CONFIG="serverName=poizonapiclient" $(TAG) sh
 
 .PHONY: test
 test:
