@@ -20,7 +20,7 @@ abstract class Request implements RequestInterface
         protected ParametersInterface $parameters
     )
     {
-        $this->headers['Access-Token'] = $accessToken;
+        $this->setHeader('Access-Token', $accessToken);
     }
 
 
