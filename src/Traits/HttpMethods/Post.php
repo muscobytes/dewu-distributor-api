@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeadsApi\Traits\HttpMethods;
+namespace Muscobytes\Poizon\DistributionApiClient\Traits\HttpMethods;
 
 trait Post
 {
