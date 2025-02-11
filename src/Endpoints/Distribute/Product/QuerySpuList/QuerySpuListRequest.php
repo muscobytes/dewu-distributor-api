@@ -3,7 +3,7 @@
 namespace Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList;
 
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Request;
-use Muscobytes\TakeadsApi\Traits\Methods\Post;
+use Muscobytes\TakeadsApi\Traits\HttpMethods\Post;
 
 class QuerySpuListRequest extends Request
 {

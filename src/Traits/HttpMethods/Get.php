@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\TakeadsApi\Traits\Methods;
+namespace Muscobytes\TakeadsApi\Traits\HttpMethods;
 
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\ParametersInterface;
 
