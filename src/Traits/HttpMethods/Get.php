@@ -13,6 +13,9 @@ trait Get
 
     public function getQueryParams(): array
     {
-        return $this->parameters->toArray(transformBoolean: true);
+        return $this->parameters->toArray(
+            transformBoolean: true,
+            removeNullValues: true
+        );
     }
 }
