@@ -1,9 +1,9 @@
 <?php
 
-namespace Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList;
+namespace Muscobytes\Poizon\DistributionApiClient\Dto\Product\QuerySpuList;
 
-use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums\SeasonEnum;
-use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums\StatusEnum;
+use Muscobytes\Poizon\DistributionApiClient\Enums\SeasonEnum;
+use Muscobytes\Poizon\DistributionApiClient\Enums\StatusEnum;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\DtoInterface;
 use Muscobytes\Poizon\DistributionApiClient\Traits\Array\FromArray;
 use Muscobytes\Poizon\DistributionApiClient\Traits\Array\ToArray;

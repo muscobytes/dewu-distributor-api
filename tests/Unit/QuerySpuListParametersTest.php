@@ -3,8 +3,8 @@
 namespace Muscobytes\Poizon\tests\Unit;
 
 
-use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums\SeasonEnum;
-use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums\StatusEnum;
+use Muscobytes\Poizon\DistributionApiClient\Enums\SeasonEnum;
+use Muscobytes\Poizon\DistributionApiClient\Enums\StatusEnum;
 use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\QuerySpuListParameters;
 use Muscobytes\Poizon\tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;

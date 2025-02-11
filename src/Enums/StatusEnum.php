@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\Enums;
+namespace Muscobytes\Poizon\DistributionApiClient\Enums;
 
 enum StatusEnum: string
 {
