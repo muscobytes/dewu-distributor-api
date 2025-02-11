@@ -6,8 +6,6 @@ use Muscobytes\Poizon\DistributionApiClient\Interfaces\ParametersInterface;
 
 trait Get
 {
-    private ParametersInterface $parameters;
-
     public function getHttpMethod(): string
     {
         return 'GET';
