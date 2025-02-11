@@ -2,6 +2,7 @@
 
 namespace Muscobytes\Poizon\DistributionApiClient\Abstract;
 
+use Muscobytes\Poizon\DistributionApiClient\Exceptions\ResponseClassDoesNotExists;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\RequestInterface;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\ParametersInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -20,7 +21,7 @@ abstract class Request implements RequestInterface
         protected ParametersInterface $parameters
     )
     {
-        $this->setHeader('Access-Token', $accessToken);
+        $this->headers['Access-Token'] = $accessToken;
     }
 
 
@@ -55,8 +56,14 @@ abstract class Request implements RequestInterface
     }
 
 
+    /**
+     * @throws ResponseClassDoesNotExists
+     */
     public function getResponse(ResponseInterface $response): Response
     {
+        if (!class_exists($this->responseClassName)) {
+            throw new ResponseClassDoesNotExists("Response class ({$this->responseClassName}) does not exist", 1000);
+        }
         return new $this->responseClassName($response);
     }
 }
