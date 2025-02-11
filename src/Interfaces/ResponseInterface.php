@@ -9,4 +9,6 @@ interface ResponseInterface
     public function getResponse(): HttpResponseInterface;
 
     public function getPayload(): DtoInterface;
+
+    public function getDtoClassName(): string;
 }
