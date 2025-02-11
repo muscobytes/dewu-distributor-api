@@ -2,9 +2,9 @@
 
 namespace Muscobytes\Poizon\DistributionApiClient\Abstract;
 
-
 use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\QuerySpuListResponse;
-use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\SpuList;
+use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\SpuListResponse;
+use Muscobytes\Poizon\DistributionApiClient\Interfaces\DtoInterface;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\ResponseInterface;
 use Psr\Http\Message\ResponseInterface as HttpResponseInterface;
 
@@ -27,14 +27,14 @@ abstract class Response implements ResponseInterface
     protected function getDtoClass(ResponseInterface $response): string
     {
         return match (get_class($this)) {
-            QuerySpuListResponse::class => SpuList::class
+            QuerySpuListResponse::class => SpuListResponse::class
         };
     }
 
 
     public function getPayload(): array
     {
-        /** @var Dto $dtoClassName */
+        /** @var DtoInterface $dtoClassName */
         $dtoClassName = $this->getDtoClass($this);
         return array_map(
             fn (array $item) => $dtoClassName::fromArray($item),
