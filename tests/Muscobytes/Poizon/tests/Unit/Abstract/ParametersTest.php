@@ -6,14 +6,14 @@ use Muscobytes\Poizon\DistributionApiClient\Abstract\Parameters;
 use Muscobytes\Poizon\tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 
-class ConcreteClass extends Parameters {}
+class TestAbstractParametersClass extends Parameters {}
 
 #[CoversClass(Parameters::class)]
 class ParametersTest extends BaseTest
 {
     public function testParameters()
     {
-        $parameters = new ConcreteClass();
+        $parameters = new TestAbstractParametersClass();
         $this->assertTrue(method_exists($parameters, 'toArray'));
     }
 }
