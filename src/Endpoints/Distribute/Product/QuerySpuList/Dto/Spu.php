@@ -37,6 +37,7 @@ class Spu implements DtoInterface
      * @param string $style
      * @param string $sizeChart
      * @param string $productDesc
+     * @param array<Sku>|null $skuList
      */
     public function __construct(
         public int $id,
@@ -61,7 +62,8 @@ class Spu implements DtoInterface
         public string $material,
         public string $style,
         public string $sizeChart,
-        public string $productDesc
+        public string $productDesc,
+        public ?array $skuList
     )
     {
         //
