@@ -24,10 +24,9 @@ abstract class Response implements ResponseInterface
 
     public function getPayload(): DtoInterface
     {
-        /** @var DtoInterface $dtoClassName */
-        $dtoClassName = $this->getDtoClassName();
-        return $dtoClassName::fromArray(
-            json_decode($this->getResponse()->getBody(), true)
-        );
+        return call_user_func([
+            $this->getDtoClassName(),
+            'fromArray'
+        ], json_decode($this->getResponse()->getBody(), true));
     }
 }
