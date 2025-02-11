@@ -2,8 +2,6 @@
 
 namespace Muscobytes\Poizon\DistributionApiClient\Abstract;
 
-
-
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\RequestInterface;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\ParametersInterface;
 use Psr\Http\Message\ResponseInterface;
@@ -18,11 +16,11 @@ abstract class Request implements RequestInterface
 
 
     public function __construct(
-        string $bearerToken,
+        string                        $accessToken,
         protected ParametersInterface $parameters
     )
     {
-        $this->headers['Authorization'] = 'Bearer ' . $bearerToken;
+        $this->headers['Access-Token'] = $accessToken;
     }
 
 
