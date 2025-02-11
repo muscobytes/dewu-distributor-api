@@ -8,7 +8,6 @@ use DateTimeInterface;
 use Muscobytes\Poizon\DistributionApiClient\Traits\Array\ToArray;
 use Muscobytes\Poizon\tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\Attributes\DataProvider;
 
 class ToArrayTraitClassExample
 {
@@ -30,9 +29,17 @@ class ToArrayTraitClassExample
 #[CoversClass(ToArray::class)]
 class ToArrayTest extends BaseTest
 {
-    #[DataProvider('toArrayDataProvider')]
-    public function testToArray(ToArrayTraitClassExample $object)
+    public function testToArray()
     {
+        $object = new ToArrayTraitClassExample(
+            id: 42,
+            name: 'Example',
+            isActive: false,
+            tags: [ 'tag1', 'tag2', 'tag3' ],
+            createdAt: new DateTimeImmutable('2019-03-08T08:00:42+00:00'),
+            updatedAt: new DateTime('2016-04-12T01:28:42+00:00'),
+        );
+
         $this->assertTrue(method_exists($object, 'toArray'));
 
         $array = $object->toArray();
@@ -61,22 +68,5 @@ class ToArrayTest extends BaseTest
         $this->assertArrayHasKey('updatedAt', $array);
         $this->assertIsString($array['updatedAt']);
         $this->assertEquals('2016-04-12', $array['updatedAt']);
-    }
-
-
-    public static function toArrayDataProvider(): array
-    {
-        return [
-            [
-                'object' => new ToArrayTraitClassExample(
-                    id: 42,
-                    name: 'Example',
-                    isActive: false,
-                    tags: [ 'tag1', 'tag2', 'tag3' ],
-                    createdAt: new DateTimeImmutable('2019-03-08T08:00:42+00:00'),
-                    updatedAt: new DateTime('2016-04-12T01:28:42+00:00'),
-                )
-            ]
-        ];
     }
 }
