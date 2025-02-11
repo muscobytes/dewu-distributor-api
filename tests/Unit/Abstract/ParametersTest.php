@@ -1,6 +1,6 @@
 <?php
 
-namespace Muscobytes\Poizon\tests\Unit\Abstract;
+namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Abstract;
 
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Parameters;
 use Muscobytes\Poizon\tests\BaseTest;

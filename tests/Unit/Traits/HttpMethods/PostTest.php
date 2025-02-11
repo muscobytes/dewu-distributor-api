@@ -1,6 +1,6 @@
 <?php
 
-namespace Unit\Traits\HttpMethods;
+namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Traits\HttpMethods;
 
 use Muscobytes\Poizon\DistributionApiClient\Traits\HttpMethods\Post;
 use Muscobytes\Poizon\tests\BaseTest;
@@ -14,7 +14,7 @@ class PostTestClass
 #[CoversClass(Post::class)]
 class PostTest extends BaseTest
 {
-    public function testPostTrait()
+    public function testPostTrait(): void
     {
         $class = new PostTestClass();
         $this->assertTrue(method_exists($class, 'getHttpMethod'));

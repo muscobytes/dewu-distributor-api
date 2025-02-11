@@ -15,6 +15,11 @@
             "Muscobytes\\Poizon\\DistributionApiClient\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Muscobytes\\Poizon\\DistributionApiClient\\Tests\\": "tests"
+        }
+    },
     "minimum-stability": "stable",
     "require": {
         "php": ">=8.1",

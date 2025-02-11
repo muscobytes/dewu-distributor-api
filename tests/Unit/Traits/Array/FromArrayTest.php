@@ -1,6 +1,6 @@
 <?php
 
-namespace Unit\Traits\Array;
+namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Traits\Array;
 
 use Muscobytes\Poizon\DistributionApiClient\Traits\Array\FromArray;
 use Muscobytes\Poizon\tests\BaseTest;
@@ -23,7 +23,7 @@ class Concrete
 #[CoversClass(FromArray::class)]
 class FromArrayTest extends BaseTest
 {
-    public function testFromArray()
+    public function testFromArray(): void
     {
         $class = Concrete::fromArray([
             'id' => 17,

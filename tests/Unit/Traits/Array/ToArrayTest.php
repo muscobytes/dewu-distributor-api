@@ -1,6 +1,6 @@
 <?php
 
-namespace Unit\Traits\Array;
+namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Traits\Array;
 
 use DateTime;
 use DateTimeImmutable;
@@ -29,7 +29,7 @@ class ToArrayTraitClassExample
 #[CoversClass(ToArray::class)]
 class ToArrayTest extends BaseTest
 {
-    public function testToArray()
+    public function testToArray(): void
     {
         $object = new ToArrayTraitClassExample(
             id: 42,

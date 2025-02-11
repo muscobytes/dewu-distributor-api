@@ -1,6 +1,6 @@
 <?php
 
-namespace Unit\Traits\HttpMethods;
+namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Traits\HttpMethods;
 
 use DateTime;
 use DateTimeInterface;
@@ -38,7 +38,7 @@ class GetTestClass
 #[CoversClass(Get::class)]
 class GetTest extends BaseTest
 {
-    public function testGetTrait()
+    public function testGetTrait(): void
     {
         $parameters = new GetTestParameters(
             id: 114,

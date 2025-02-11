@@ -1,6 +1,6 @@
 <?php
 
-namespace Unit\Traits\HttpMethods;
+namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Traits\HttpMethods;
 
 use Muscobytes\Poizon\DistributionApiClient\Traits\HttpMethods\Put;
 use Muscobytes\Poizon\tests\BaseTest;
@@ -14,7 +14,7 @@ class PutTestClass
 #[CoversClass(Put::class)]
 class PutTest extends BaseTest
 {
-    public function testPutTrait()
+    public function testPutTrait(): void
     {
         $class = new PutTestClass();
         $this->assertTrue(method_exists($class, 'getHttpMethod'));

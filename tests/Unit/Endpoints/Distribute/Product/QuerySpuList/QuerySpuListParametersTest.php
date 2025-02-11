@@ -1,7 +1,6 @@
 <?php
 
-namespace Muscobytes\Poizon\tests\Unit\Endpoints\Distribute\Product\QuerySpuList;
-
+namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Endpoints\Distribute\Product\QuerySpuList;
 
 use Muscobytes\Poizon\DistributionApiClient\Enums\SeasonEnum;
 use Muscobytes\Poizon\DistributionApiClient\Enums\StatusEnum;
@@ -12,7 +11,7 @@ use PHPUnit\Framework\Attributes\CoversClass;
 #[CoversClass(QuerySpuListParameters::class)]
 class QuerySpuListParametersTest extends BaseTest
 {
-    public function testCreateQuerySpuListParametersEmpty()
+    public function testCreateQuerySpuListParametersEmpty(): void
     {
         $querySpuListParameters = new QuerySpuListParameters();
         $this->assertInstanceOf(QuerySpuListParameters::class, $querySpuListParameters);
@@ -35,7 +34,8 @@ class QuerySpuListParametersTest extends BaseTest
         $this->assertNull($querySpuListParameters->querySku);
     }
 
-    public function testCreateQuerySpuListParametersStartId()
+
+    public function testCreateQuerySpuListParametersStartId(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             startId: 42
@@ -45,7 +45,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersPageSize()
+    public function testCreateQuerySpuListParametersPageSize(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             pageSize: 23
@@ -54,7 +54,8 @@ class QuerySpuListParametersTest extends BaseTest
         $this->assertEquals(23, $querySpuListParameters->pageSize);
     }
 
-    public function testCreateQuerySpuListParametersPwSpuId()
+
+    public function testCreateQuerySpuListParametersPwSpuId(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             dwSpuId: [ 73, 3, 14, 1, 618 ]
@@ -64,7 +65,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersDistSpuId()
+    public function testCreateQuerySpuListParametersDistSpuId(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             distSpuId: [ 2, 71, 10, 120 ]
@@ -74,7 +75,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersDwSpuTitle()
+    public function testCreateQuerySpuListParametersDwSpuTitle(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             dwSpuTitle: 'Only a Sith deals in absolutes'
@@ -84,7 +85,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersDistSpuTitle()
+    public function testCreateQuerySpuListParametersDistSpuTitle(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             distSpuTitle: 'So Uncivilized.'
@@ -94,7 +95,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersDwDesignerId()
+    public function testCreateQuerySpuListParametersDwDesignerId(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             dwDesignerId: [
@@ -112,7 +113,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersDistBrandName()
+    public function testCreateQuerySpuListParametersDistBrandName(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             distBrandName: [
@@ -130,7 +131,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersDistCategory1Name()
+    public function testCreateQuerySpuListParametersDistCategory1Name(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             distCategory1Name: [
@@ -148,7 +149,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersDistCategory2Name()
+    public function testCreateQuerySpuListParametersDistCategory2Name(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             distCategory2Name: [
@@ -166,7 +167,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersDistCategory3Name()
+    public function testCreateQuerySpuListParametersDistCategory3Name(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             distCategory3Name: [
@@ -182,7 +183,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersDistFitPeopleName()
+    public function testCreateQuerySpuListParametersDistFitPeopleName(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             distFitPeopleName: [
@@ -202,7 +203,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersSeason()
+    public function testCreateQuerySpuListParametersSeason(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             season: SeasonEnum::WINTER
@@ -212,7 +213,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersDistStatus()
+    public function testCreateQuerySpuListParametersDistStatus(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             distStatus: StatusEnum::PUBLISHED
@@ -222,7 +223,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersModifyStartTime()
+    public function testCreateQuerySpuListParametersModifyStartTime(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             modifyStartTime: 1732232183000
@@ -232,7 +233,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersModifyEndTime()
+    public function testCreateQuerySpuListParametersModifyEndTime(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             modifyEndTime: 1737588782000
@@ -242,7 +243,7 @@ class QuerySpuListParametersTest extends BaseTest
     }
 
 
-    public function testCreateQuerySpuListParametersQuerySku()
+    public function testCreateQuerySpuListParametersQuerySku(): void
     {
         $querySpuListParameters = new QuerySpuListParameters(
             querySku: false
