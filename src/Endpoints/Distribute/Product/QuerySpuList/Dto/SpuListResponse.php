@@ -15,6 +15,7 @@ class SpuListResponse implements DtoInterface
         public int $code,
         public string $msg,
         public SpuListData $data,
+        public int $status
     )
     {
         //
