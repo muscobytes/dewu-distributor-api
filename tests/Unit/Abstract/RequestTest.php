@@ -5,7 +5,7 @@ namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Abstract;
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Parameters;
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Request;
 use Muscobytes\Poizon\DistributionApiClient\Exceptions\ResponseClassDoesNotExists;
-use Muscobytes\Poizon\tests\BaseTest;
+use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\MockObject\Exception;
 

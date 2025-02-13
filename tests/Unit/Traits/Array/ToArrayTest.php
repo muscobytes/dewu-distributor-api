@@ -6,7 +6,7 @@ use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
 use Muscobytes\Poizon\DistributionApiClient\Traits\Array\ToArray;
-use Muscobytes\Poizon\tests\BaseTest;
+use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 class ToArrayTraitClassExample

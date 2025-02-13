@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Dto\Product\QuerySpuList;
 
-use Muscobytes\Poizon\tests\BaseTest;
+use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use Muscobytes\Poizon\DistributionApiClient\Dto\Product\QuerySpuList\SaleAttr;
 use PHPUnit\Framework\Attributes\CoversClass;
 

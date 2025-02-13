@@ -3,7 +3,7 @@
 namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Traits\HttpMethods;
 
 use Muscobytes\Poizon\DistributionApiClient\Traits\HttpMethods\Put;
-use Muscobytes\Poizon\tests\BaseTest;
+use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 class PutTestClass

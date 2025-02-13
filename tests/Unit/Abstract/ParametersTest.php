@@ -4,7 +4,7 @@ namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Abstract;
 
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Parameters;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\ParametersInterface;
-use Muscobytes\Poizon\tests\BaseTest;
+use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 

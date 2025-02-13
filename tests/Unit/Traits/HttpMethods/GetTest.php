@@ -7,7 +7,7 @@ use DateTimeInterface;
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Parameters;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\ParametersInterface;
 use Muscobytes\Poizon\DistributionApiClient\Traits\HttpMethods\Get;
-use Muscobytes\Poizon\tests\BaseTest;
+use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 class GetTestParameters extends Parameters

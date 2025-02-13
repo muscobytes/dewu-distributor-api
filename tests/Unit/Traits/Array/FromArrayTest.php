@@ -3,7 +3,7 @@
 namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Traits\Array;
 
 use Muscobytes\Poizon\DistributionApiClient\Traits\Array\FromArray;
-use Muscobytes\Poizon\tests\BaseTest;
+use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 class Concrete

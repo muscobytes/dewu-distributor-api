@@ -5,7 +5,7 @@ namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Endpoints\Distribut
 use Muscobytes\Poizon\DistributionApiClient\Enums\SeasonEnum;
 use Muscobytes\Poizon\DistributionApiClient\Enums\StatusEnum;
 use Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList\QuerySpuListParameters;
-use Muscobytes\Poizon\tests\BaseTest;
+use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 
 #[CoversClass(QuerySpuListParameters::class)]

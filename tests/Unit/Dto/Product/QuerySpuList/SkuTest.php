@@ -6,7 +6,7 @@ namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Dto\Product\QuerySp
 
 use Muscobytes\Poizon\DistributionApiClient\Dto\Product\QuerySpuList\Sku;
 use Muscobytes\Poizon\DistributionApiClient\Enums\StatusEnum;
-use Muscobytes\Poizon\tests\BaseTest;
+use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use Muscobytes\Poizon\DistributionApiClient\Dto\Product\QuerySpuList\SaleAttr;
 use PHPUnit\Framework\Attributes\CoversClass;
 
@@ -98,7 +98,7 @@ class SkuTest extends BaseTest
             'id' => 3003,
             'createTime' => 1700000002,
             'modifyTime' => 1700003000,
-            'distStatus' => StatusEnum::PUBLISHED,
+            'distStatus' => 'PRODUCT_ON',
             'dwSkuId' => 70003,
             'distSkuId' => 'DSKU-54321',
             'image' => 'https://example.com/image3.jpg',
