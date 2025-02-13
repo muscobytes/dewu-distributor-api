@@ -2,16 +2,14 @@
 
 namespace Muscobytes\Poizon\DistributionApiClient\Dto\Product\QuerySpuList;
 
+use Muscobytes\Poizon\DistributionApiClient\Abstract\Dto;
+use Muscobytes\Poizon\DistributionApiClient\Attributes\CastWith;
 use Muscobytes\Poizon\DistributionApiClient\Enums\StatusEnum;
-use Muscobytes\Poizon\DistributionApiClient\Interfaces\DtoInterface;
-use Muscobytes\Poizon\DistributionApiClient\Traits\Array\FromArray;
-use Muscobytes\Poizon\DistributionApiClient\Traits\Array\ToArray;
+use Muscobytes\Poizon\DistributionApiClient\Traits\Casts\ArrayOfCast;
+use Muscobytes\Poizon\DistributionApiClient\Traits\Casts\EnumCast;
 
-class Sku implements DtoInterface
+class Sku extends Dto
 {
-    use ToArray;
-    use FromArray;
-
     /**
      * @param int $id
      * @param int $createTime
@@ -27,15 +25,26 @@ class Sku implements DtoInterface
      */
     public function __construct(
         public int $id,
+
         public int $createTime,
+
         public int $modifyTime,
+
+        #[CastWith(EnumCast::class, StatusEnum::class)]
         public StatusEnum $distStatus,
+
         public int $dwSkuId,
+
         public string $distSkuId,
+
         public string $image,
+
         public string $barcode,
+
         public int $minBidPrice,
+
         public string $skuLink,
+
         public array $saleAttr
     )
     {
@@ -49,7 +58,7 @@ class Sku implements DtoInterface
             id: $array['id'],
             createTime: $array['createTime'],
             modifyTime: $array['modifyTime'],
-            distStatus: $array['distStatus'],
+            distStatus: StatusEnum::from($array['distStatus']),
             dwSkuId: $array['dwSkuId'],
             distSkuId: $array['distSkuId'],
             image: $array['image'],
