@@ -41,4 +41,25 @@ class Sku implements DtoInterface
     {
         //
     }
+
+
+    public static function fromArray(array $array): self
+    {
+        return new self(
+            id: $array['id'],
+            createTime: $array['createTime'],
+            modifyTime: $array['modifyTime'],
+            distStatus: $array['distStatus'],
+            dwSkuId: $array['dwSkuId'],
+            distSkuId: $array['distSkuId'],
+            image: $array['image'],
+            barcode: $array['barcode'],
+            minBidPrice: $array['minBidPrice'],
+            skuLink: $array['skuLink'],
+            saleAttr: array_map(
+                fn ($item) => SaleAttr::fromArray($item),
+                $array['saleAttr']
+            )
+        );
+    }
 }
