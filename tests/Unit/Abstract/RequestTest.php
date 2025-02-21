@@ -26,28 +26,28 @@ class RequestTest extends BaseTest
     }
 
 
-    public function testConstructorSetsAccessToken(): void
+    public function test_constructor_sets_access_token(): void
     {
         $request = $this->getMockRequest();
         $this->assertSame(['Access-Token' => 'test_access_token'], $request->getHeaders());
     }
 
 
-    public function testGetUrlPathReturnsEmptyString(): void
+    public function test_get_url_path_returns_empty_string(): void
     {
         $request = $this->getMockRequest();
         $this->assertSame('', $request->getUrlPath());
     }
 
 
-    public function testGetQueryParamsReturnsEmptyArray(): void
+    public function test_get_query_params_returns_empty_array(): void
     {
         $request = $this->getMockRequest();
         $this->assertSame([], $request->getQueryParams());
     }
 
 
-    public function testSetHeaderAddsHeader(): void
+    public function test_set_header_adds_header(): void
     {
         $request = $this->getMockRequest();
         $request->setHeader('Content-Type', 'application/json');
@@ -60,7 +60,7 @@ class RequestTest extends BaseTest
         $this->assertSame($expectedHeaders, $request->getHeaders());
     }
 
-    public function testGetBodyReturnsEmptyString(): void
+    public function test_get_body_returns_empty_string(): void
     {
         $request = $this->getMockRequest();
         $this->assertSame('', $request->getBody());
@@ -69,7 +69,7 @@ class RequestTest extends BaseTest
     /**
      * @throws Exception
      */
-    public function testGetResponseThrowsErrorIfResponseClassNotSet(): void
+    public function test_get_response_throws_error_if_response_class_not_set(): void
     {
         $request = $this->getMockRequest();
         $this->expectException(ResponseClassDoesNotExists::class);
