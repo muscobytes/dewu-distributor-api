@@ -10,5 +10,5 @@ interface ResponseInterface
 
     public function getPayload(): DtoInterface;
 
-    public function getDtoClassName(): string;
+    public function getResponseDtoClassName(): string;
 }

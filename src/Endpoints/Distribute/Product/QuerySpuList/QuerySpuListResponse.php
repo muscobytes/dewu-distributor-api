@@ -7,7 +7,7 @@ use Muscobytes\Poizon\DistributionApiClient\Dto\Product\QuerySpuList\SpuListResp
 
 class QuerySpuListResponse extends Response
 {
-    public function getDtoClassName(): string
+    public function getResponseDtoClassName(): string
     {
         return SpuListResponse::class;
     }
