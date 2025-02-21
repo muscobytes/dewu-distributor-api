@@ -19,8 +19,6 @@ class PutTest extends BaseTest
     public function testPutTrait(): void
     {
         $class = new PutTestClass();
-        $this->assertTrue(method_exists($class, 'getHttpMethod'));
-        $this->assertIsString($class->getHttpMethod());
         $this->assertEquals('PUT', $class->getHttpMethod());
     }
 }
