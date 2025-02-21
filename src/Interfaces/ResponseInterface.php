@@ -1,4 +1,9 @@
 <?php
+/**
+ * File: Interfaces/ResponseInterface.php
+ */
+
+declare(strict_types=1);
 
 namespace Muscobytes\Poizon\DistributionApiClient\Interfaces;
 
