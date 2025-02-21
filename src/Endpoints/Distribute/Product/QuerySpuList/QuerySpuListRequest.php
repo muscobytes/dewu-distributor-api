@@ -29,5 +29,4 @@ class QuerySpuListRequest extends Request
     {
         return QuerySpuListResponse::class;
     }
-
 }

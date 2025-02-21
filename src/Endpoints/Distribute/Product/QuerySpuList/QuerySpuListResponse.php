@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Muscobytes\Poizon\DistributionApiClient\Endpoints\Distribute\Product\QuerySpuList;
 
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Response;
