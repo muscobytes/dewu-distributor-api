@@ -4,23 +4,17 @@ declare(strict_types=1);
 
 namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Traits\HttpMethods;
 
+use Muscobytes\Poizon\DistributionApiClient\Tests\Stubs\Traits\HttpsMethods\PostStub;
 use Muscobytes\Poizon\DistributionApiClient\Traits\HttpMethods\Post;
 use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
-
-class PostTestClass
-{
-    use Post;
-}
 
 #[CoversClass(Post::class)]
 class PostTest extends BaseTest
 {
     public function testPostTrait(): void
     {
-        $class = new PostTestClass();
-        $this->assertTrue(method_exists($class, 'getHttpMethod'));
-        $this->assertIsString($class->getHttpMethod());
+        $class = new PostStub();
         $this->assertEquals('POST', $class->getHttpMethod());
     }
 }
