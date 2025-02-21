@@ -64,7 +64,7 @@ abstract class Request implements RequestInterface
     public function getResponse(ResponseInterface $response): Response
     {
         if (!class_exists($this->responseClassName)) {
-            throw new ResponseClassDoesNotExists("Response class ({$this->responseClassName}) does not exist", 1000);
+            throw new ResponseClassDoesNotExists("Response class ($this->responseClassName) does not exist", 1000);
         }
         return new $this->responseClassName($response);
     }
