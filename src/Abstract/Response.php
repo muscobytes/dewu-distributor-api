@@ -1,4 +1,9 @@
 <?php
+/**
+ * File: Abstract/Response.php
+ */
+
+declare(strict_types=1);
 
 namespace Muscobytes\Poizon\DistributionApiClient\Abstract;
 
@@ -27,6 +32,6 @@ abstract class Response implements ResponseInterface
         return call_user_func([
             $this->getResponseDtoClassName(),
             'fromArray'
-        ], json_decode($this->getResponse()->getBody(), true));
+        ], json_decode($this->getResponse()->getBody()->getContents(), true));
     }
 }
