@@ -230,7 +230,7 @@ class QuerySpuListParametersTest extends BaseTest
         $querySpuListParameters = new QuerySpuListParameters(
             modifyStartTime: 1732232183000
         );
-        $this->assertIsInt(1732232183000, $querySpuListParameters->modifyStartTime);
+        $this->assertIsInt($querySpuListParameters->modifyStartTime);
         $this->assertEquals(1732232183000, $querySpuListParameters->modifyStartTime);
     }
 
@@ -240,7 +240,7 @@ class QuerySpuListParametersTest extends BaseTest
         $querySpuListParameters = new QuerySpuListParameters(
             modifyEndTime: 1737588782000
         );
-        $this->assertIsInt(1737588782000, $querySpuListParameters->modifyEndTime);
+        $this->assertIsInt($querySpuListParameters->modifyEndTime);
         $this->assertEquals(1737588782000, $querySpuListParameters->modifyEndTime);
     }
 

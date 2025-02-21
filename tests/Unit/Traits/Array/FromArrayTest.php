@@ -34,8 +34,8 @@ class FromArrayTest extends BaseTest
         ]);
         $this->assertInstanceOf(Concrete::class, $class);
         $this->assertTrue(method_exists($class, 'fromArray'));
-        $this->assertIsInt(17, $class->id);
-        $this->assertIsInt(23, $class->age);
+        $this->assertIsInt($class->id);
+        $this->assertIsInt($class->age);
         $this->assertIsString('John Doe', $class->name);
     }
 }
