@@ -8,7 +8,7 @@ use Muscobytes\Poizon\DistributionApiClient\Enums\SeasonEnum;
 use Muscobytes\Poizon\DistributionApiClient\Enums\StatusEnum;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\DtoInterface;
 use Muscobytes\Poizon\DistributionApiClient\Traits\Array\FromArray;
-use Muscobytes\Poizon\DistributionApiClient\Traits\Array\ToArray;
+use Postfriday\Castable\Traits\ToArray;
 
 class Spu implements DtoInterface
 {

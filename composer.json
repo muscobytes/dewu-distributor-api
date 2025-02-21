@@ -26,7 +26,8 @@
         "psr/http-client-implementation": "*",
         "psr/http-factory-implementation": "*",
         "php-http/discovery": "^1.20",
-        "psr/http-client": "^1.0"
+        "psr/http-client": "^1.0",
+        "postfriday/castable": "^1.0"
     },
     "config": {
         "allow-plugins": {
