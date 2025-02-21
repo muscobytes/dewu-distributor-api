@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Muscobytes\Poizon\DistributionApiClient\Tests;
 
 use PHPUnit\Framework\Attributes\CoversClass;
