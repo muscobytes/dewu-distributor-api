@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Abstract;
 
+use Mockery;
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Parameters;
 use Muscobytes\Poizon\DistributionApiClient\Abstract\Request;
-use Muscobytes\Poizon\DistributionApiClient\Exceptions\ResponseClassDoesNotExists;
 use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\MockObject\Exception;
 
 #[CoversClass(Request::class)]
 class RequestTest extends BaseTest
@@ -29,7 +28,10 @@ class RequestTest extends BaseTest
     public function test_constructor_sets_access_token(): void
     {
         $request = $this->getMockRequest();
-        $this->assertSame(['Access-Token' => 'test_access_token'], $request->getHeaders());
+        $this->assertSame([
+            'Content-Type' => 'application/json',
+            'Access-Token' => 'test_access_token',
+        ], $request->getHeaders());
     }
 
 
@@ -50,11 +52,12 @@ class RequestTest extends BaseTest
     public function test_set_header_adds_header(): void
     {
         $request = $this->getMockRequest();
-        $request->setHeader('Content-Type', 'application/json');
+        $request->setHeader('User-Agent', 'Gordon Freeman');
 
         $expectedHeaders = [
+            'Content-Type' => 'application/json',
             'Access-Token' => 'test_access_token',
-            'Content-Type' => 'application/json'
+            'User-Agent' => 'Gordon Freeman',
         ];
 
         $this->assertSame($expectedHeaders, $request->getHeaders());
@@ -66,13 +69,14 @@ class RequestTest extends BaseTest
         $this->assertSame('', $request->getBody());
     }
 
-    /**
-     * @throws Exception
-     */
-    public function test_get_response_throws_error_if_response_class_not_set(): void
+
+    public function test_set_body_adds_body(): void
     {
-        $request = $this->getMockRequest();
-        $this->expectException(ResponseClassDoesNotExists::class);
-        $request->getResponse($this->createMock('Psr\Http\Message\ResponseInterface'));
+        $expected = json_encode([
+            'startId' => 23
+        ]);
+        $requestMock = Mockery::mock(Request::class);
+        $requestMock->shouldReceive('getBody')->andReturn($expected);
+        $this->assertSame($expected, $requestMock->getBody());
     }
 }

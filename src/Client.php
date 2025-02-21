@@ -23,7 +23,7 @@ class Client
     protected HttpRequestInterface $request;
 
     public function __construct(
-        protected readonly string          $base_uri = 'https://distopen.poizon.com/open/api/v1',
+        protected readonly string          $base_uri = 'https://distopen.poizon.com',
         protected ?ClientInterface         $client = null,
         protected ?RequestFactoryInterface $requestFactory = null,
         protected ?StreamFactoryInterface  $streamFactory = null

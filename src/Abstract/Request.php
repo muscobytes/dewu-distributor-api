@@ -7,18 +7,15 @@ declare(strict_types=1);
 
 namespace Muscobytes\Poizon\DistributionApiClient\Abstract;
 
-use Muscobytes\Poizon\DistributionApiClient\Exceptions\ResponseClassDoesNotExists;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\RequestInterface;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\ParametersInterface;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class Request implements RequestInterface
 {
-    private array $headers = [];
-
-    private string $path = '';
-
-    private string $responseClassName = '';
+    private array $headers = [
+        'Content-Type' => 'application/json',
+    ];
 
 
     public function __construct(
@@ -32,7 +29,7 @@ abstract class Request implements RequestInterface
 
     public function getUrlPath(): string
     {
-        return $this->path;
+        return '';
     }
 
 
@@ -61,14 +58,15 @@ abstract class Request implements RequestInterface
     }
 
 
-    /**
-     * @throws ResponseClassDoesNotExists
-     */
+    public function getResponseClassName(): string
+    {
+        return '';
+    }
+
+
     public function getResponse(ResponseInterface $response): Response
     {
-        if (!class_exists($this->responseClassName)) {
-            throw new ResponseClassDoesNotExists("Response class ($this->responseClassName) does not exist", 1000);
-        }
-        return new $this->responseClassName($response);
+        $class = $this->getResponseClassName();
+        return new $class($response);
     }
 }

@@ -13,13 +13,33 @@ class SpuListResponse implements DtoInterface
     use ToArray;
     use FromArray;
 
+    /**
+     * @param int $code
+     * @param string $msg
+     * @param int $status
+     * @param SpuListData|null $data
+     * @param string|null $domain
+     */
     public function __construct(
         public int $code,
         public string $msg,
-        public SpuListData $data,
-        public int $status
+        public int $status,
+        public ?SpuListData $data = null,
+        public ?string $domain = null,
     )
     {
         //
+    }
+
+
+    public static function fromArray(array $array): self
+    {
+        return new self(
+            code: $array['code'],
+            msg: $array['msg'],
+            status: $array['status'],
+            data: SpuListData::fromArray($array['data']),
+            domain: $array['domain']
+        );
     }
 }

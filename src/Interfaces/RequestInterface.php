@@ -27,5 +27,7 @@ interface RequestInterface
 
     public function getBody(): string;
 
+    public function getResponseClassName(): string;
+
     public function getResponse(ResponseInterface $response): Response;
 }
