@@ -2,11 +2,9 @@
 # SHELL = sh -xv
 
 PHP_VERSION := 8.1
-
 TAG := muscobytes/php-cli-$(PHP_VERSION)
-
-DOCKER_RUN := docker run -ti \
-	-v "./:/var/www/html"
+DOCKER_RUN := docker run -ti -v "./:/var/www/html"
+PHP_IDE_SERVER_NAME := "poizonapiclient"
 
 .PHONY: help
 help:  ## Shows this help message
@@ -21,11 +19,12 @@ build:
 
 .PHONY: shell
 shell:
-	$(DOCKER_RUN) -e PHP_IDE_CONFIG="serverName=poizonapiclient" $(TAG) sh
+	$(DOCKER_RUN) -e PHP_IDE_CONFIG="serverName=$(PHP_IDE_SERVER_NAME)" $(TAG) sh
 
-.PHONY: test
-test:
+.PHONY: tests
+tests:
 	$(DOCKER_RUN) $(TAG) vendor/bin/phpunit
+	$(DOCKER_RUN) $(TAG) vendor/bin/phpstan analyze src tests
 
 .PHONY: tag
 tag:
