@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Muscobytes\Poizon\DistributionApiClient\Dto\Product\QuerySpuList;
 
 use Muscobytes\Poizon\DistributionApiClient\Enums\SeasonEnum;

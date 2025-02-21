@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Traits\Array;
 
 use Muscobytes\Poizon\DistributionApiClient\Traits\Array\FromArray;

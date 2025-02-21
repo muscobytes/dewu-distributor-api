@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Muscobytes\Poizon\DistributionApiClient\Abstract;
 
 use Muscobytes\Poizon\DistributionApiClient\Exceptions\ResponseClassDoesNotExists;
