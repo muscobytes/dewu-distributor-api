@@ -5,60 +5,48 @@ declare(strict_types=1);
 namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Traits\HttpMethods;
 
 use DateTime;
-use DateTimeInterface;
-use Muscobytes\Poizon\DistributionApiClient\Abstract\Parameters;
-use Muscobytes\Poizon\DistributionApiClient\Interfaces\ParametersInterface;
+use Muscobytes\Poizon\DistributionApiClient\Tests\Stubs\Abstract\ParametersStub;
+use Muscobytes\Poizon\DistributionApiClient\Tests\Stubs\Traits\HttpsMethods\GetStub;
 use Muscobytes\Poizon\DistributionApiClient\Traits\HttpMethods\Get;
 use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 
-class GetTestParameters extends Parameters
-{
-    public function __construct(
-        public int $id,
-        public string $name,
-        public bool $isActive,
-        public DateTimeInterface $createdAt
-    )
-    {
-        //
-    }
-}
-
-class GetTestClass
-{
-    use Get;
-
-    public function __construct(
-        private readonly ParametersInterface $parameters,
-    )
-    {
-        //
-    }
-}
 
 #[CoversClass(Get::class)]
 class GetTest extends BaseTest
 {
-    public function testGetTrait(): void
-    {
-        $parameters = new GetTestParameters(
-            id: 114,
-            name: 'May the Force be with you',
-            isActive: true,
-            createdAt: new DateTime('1979-02-19 12:59:01')
-        );
-        $class = new GetTestClass($parameters);
-        $this->assertTrue(method_exists($class, 'getHttpMethod'));
-        $this->assertIsString($class->getHttpMethod());
-        $this->assertEquals('GET', $class->getHttpMethod());
+    protected GetStub $stub;
 
-        $this->assertIsArray($class->getQueryParams());
+
+    public function setUp(): void
+    {
+        $this->stub = new GetStub(
+            new ParametersStub(
+                id: 42,
+                isActive: true,
+                isDisabled: false,
+                name: 'May the force be with you',
+                createdAt: new DateTime('2019-03-08 08:30:42'),
+                data: []
+            )
+        );
+        parent::setUp();
+    }
+
+    public function test_get_trait(): void
+    {
+        $this->assertTrue(method_exists($this->stub, 'getHttpMethod'));
+        $this->assertIsString($this->stub->getHttpMethod());
+        $this->assertEquals('GET', $this->stub->getHttpMethod());
+
+        $this->assertIsArray($this->stub->getQueryParams());
         $this->assertEquals([
-            'id' => 114,
-            'name' => 'May the Force be with you',
-            'isActive' => true,
-            'createdAt' => '1979-02-19'
-        ], $class->getQueryParams());
+            'id' => 42,
+            'isActive' => 'true',
+            'isDisabled' => 'false',
+            'name' => 'May the force be with you',
+            'createdAt' => '08/03/2019 08:30:42',
+            'data' => []
+        ], $this->stub->getQueryParams());
     }
 }
