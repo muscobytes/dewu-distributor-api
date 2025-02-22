@@ -14,12 +14,12 @@ class SpuListResponse implements DtoInterface
     use FromArray;
 
     /**
-     * @param int $code
-     * @param string $msg
-     * @param int $status
-     * @param SpuListData|null $data
-     * @param string|null $domain
-     */
+     * @param int $code Result code
+     * * @param string $msg Result description
+     * * @param int $status Result status
+     * * @param SpuListData|null $data List of SPUs
+     * * @param string|null $domain Service
+ */
     public function __construct(
         public int $code,
         public string $msg,

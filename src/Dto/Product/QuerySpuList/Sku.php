@@ -4,35 +4,42 @@ declare(strict_types=1);
 
 namespace Muscobytes\Poizon\DistributionApiClient\Dto\Product\QuerySpuList;
 
+use DateTimeInterface;
 use Muscobytes\Poizon\DistributionApiClient\Enums\StatusEnum;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\DtoInterface;
 use Muscobytes\Poizon\DistributionApiClient\Traits\Array\FromArray;
+use Muscobytes\Poizon\DistributionApiClient\Traits\DateTime\FromMilliseconds;
+use Postfriday\Castable\Attributes\CastWith;
+use Postfriday\Castable\Casters\DateTimeCaster;
 use Postfriday\Castable\Traits\ToArray;
 
 class Sku implements DtoInterface
 {
     use FromArray;
     use ToArray;
+    use FromMilliseconds;
 
     /**
-     * @param int $id
-     * @param int $createTime
-     * @param int $modifyTime
-     * @param StatusEnum $distStatus
-     * @param int $dwSkuId
-     * @param string $distSkuId
-     * @param string $image
-     * @param string $barcode
-     * @param int $minBidPrice
-     * @param string $skuLink
-     * @param array<SaleAttr> $saleAttr
+     * @param int $id ID
+     * @param DateTimeInterface $createTime Creation time (UTC timestamp in milliseconds)
+     * @param DateTimeInterface $modifyTime Modification time (UTC timestamp in milliseconds)
+     * @param StatusEnum $distStatus Status (PRODUCT_ON: Published, PRODUCT_OFF: Removed)
+     * @param int $dwSkuId SKU ID
+     * @param string $distSkuId Distributor's SKU ID
+     * @param string $image Image of logo
+     * @param string $barcode Barcode
+     * @param int $minBidPrice Price
+     * @param string $skuLink Item URL
+     * @param array<SaleAttr> $saleAttr Sales specifications
      */
     public function __construct(
         public int $id,
 
-        public int $createTime,
+        #[CastWith(DateTimeCaster::class, [DateTimeInterface::RFC3339])]
+        public DateTimeInterface $createTime,
 
-        public int $modifyTime,
+        #[CastWith(DateTimeCaster::class, [DateTimeInterface::RFC3339])]
+        public DateTimeInterface $modifyTime,
 
         public StatusEnum $distStatus,
 
@@ -59,8 +66,8 @@ class Sku implements DtoInterface
     {
         return new self(
             id: $array['id'],
-            createTime: $array['createTime'],
-            modifyTime: $array['modifyTime'],
+            createTime: self::fromMilliseconds($array['createTime']),
+            modifyTime: self::fromMilliseconds($array['modifyTime']),
             distStatus: StatusEnum::from($array['distStatus']),
             dwSkuId: $array['dwSkuId'],
             distSkuId: $array['distSkuId'],

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Muscobytes\Poizon\DistributionApiClient\Tests\Unit\Dto\Product\QuerySpuList;
 
+use DateTimeImmutable;
+use DateTimeInterface;
 use Muscobytes\Poizon\DistributionApiClient\Dto\Product\QuerySpuList\Sku;
 use Muscobytes\Poizon\DistributionApiClient\Enums\StatusEnum;
 use Muscobytes\Poizon\DistributionApiClient\Tests\BaseTest;
@@ -23,10 +25,13 @@ class SkuTest extends BaseTest
             enValue: 'Red'
         );
 
+        $createTime = new DateTimeImmutable('2016-04-12 01:32:17');
+        $modifyTime = new DateTimeImmutable('2019-03-08 09:41:35');
+
         $sku = new Sku(
             id: 1001,
-            createTime: 1700000000,
-            modifyTime: 1700001000,
+            createTime: $createTime,
+            modifyTime: $modifyTime,
             distStatus: StatusEnum::PUBLISHED,
             dwSkuId: 50001,
             distSkuId: 'DIST-SKU-12345',
@@ -38,8 +43,8 @@ class SkuTest extends BaseTest
         );
 
         $this->assertSame(1001, $sku->id);
-        $this->assertSame(1700000000, $sku->createTime);
-        $this->assertSame(1700001000, $sku->modifyTime);
+        $this->assertSame($createTime, $sku->createTime);
+        $this->assertSame($modifyTime, $sku->modifyTime);
         $this->assertSame(StatusEnum::PUBLISHED, $sku->distStatus);
         $this->assertSame(50001, $sku->dwSkuId);
         $this->assertSame('DIST-SKU-12345', $sku->distSkuId);
@@ -51,7 +56,7 @@ class SkuTest extends BaseTest
         $this->assertInstanceOf(SaleAttr::class, $sku->saleAttr[0]);
     }
 
-    public function testToArray(): void
+    public function test_to_array(): void
     {
         $saleAttr = new SaleAttr(
             level: '2',
@@ -61,31 +66,34 @@ class SkuTest extends BaseTest
             enValue: '42'
         );
 
+        $createTime = new DateTimeImmutable('2015-10-29 23:41:02Z');
+        $modifyTime = new DateTimeImmutable('2017-03-11 07:14:28Z');
+
         $sku = new Sku(
             id: 2002,
-            createTime: 1700000001,
-            modifyTime: 1700002000,
+            createTime: $createTime,
+            modifyTime: $modifyTime,
             distStatus: StatusEnum::REMOVED,
             dwSkuId: 60002,
-            distSkuId: 'DSKU-67890',
-            image: 'https://example.com/image2.jpg',
+            distSkuId: 'a1850c1d-c01a-4892-a39a-5a5f3b684bca',
+            image: 'https://cdn.poizon.com/pro-img/origin-img/20220212/54e28b5c29b04d1f9ae9e2260a21eb19.jpg',
             barcode: '9876543210',
             minBidPrice: 2000,
-            skuLink: 'https://example.com/sku/2002',
+            skuLink: 'https://qiwuprocurementservice.myshoplaza.com/products/81971?variant=948aab3d-5a93-4fc2-9dd9-1724ce1d5fcd',
             saleAttr: [ $saleAttr ]
         );
 
         $expectedArray = [
             'id' => 2002,
-            'createTime' => 1700000001,
-            'modifyTime' => 1700002000,
+            'createTime' => $createTime->format(DateTimeInterface::RFC3339),
+            'modifyTime' => $modifyTime->format(DateTimeInterface::RFC3339),
             'distStatus' => StatusEnum::REMOVED->value,
             'dwSkuId' => 60002,
-            'distSkuId' => 'DSKU-67890',
-            'image' => 'https://example.com/image2.jpg',
+            'distSkuId' => 'a1850c1d-c01a-4892-a39a-5a5f3b684bca',
+            'image' => 'https://cdn.poizon.com/pro-img/origin-img/20220212/54e28b5c29b04d1f9ae9e2260a21eb19.jpg',
             'barcode' => '9876543210',
             'minBidPrice' => 2000,
-            'skuLink' => 'https://example.com/sku/2002',
+            'skuLink' => 'https://qiwuprocurementservice.myshoplaza.com/products/81971?variant=948aab3d-5a93-4fc2-9dd9-1724ce1d5fcd',
             'saleAttr' => [ $saleAttr->toArray() ],
         ];
 
@@ -120,8 +128,8 @@ class SkuTest extends BaseTest
 
         $this->assertInstanceOf(Sku::class, $sku);
         $this->assertSame(3003, $sku->id);
-        $this->assertSame(1700000002, $sku->createTime);
-        $this->assertSame(1700003000, $sku->modifyTime);
+        $this->assertSame('1700000002', $sku->createTime->format('Uv'));
+        $this->assertSame('1700003000', $sku->modifyTime->format('Uv'));
         $this->assertSame(StatusEnum::PUBLISHED, $sku->distStatus);
         $this->assertSame(70003, $sku->dwSkuId);
         $this->assertSame('DSKU-54321', $sku->distSkuId);

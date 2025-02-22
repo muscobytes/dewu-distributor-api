@@ -14,8 +14,8 @@ class SpuListData implements DtoInterface
     use FromArray;
 
     /**
-     * @param int $total
-     * @param array<Spu> $spuList
+     * @param int $total Total items quantity
+     * @param array<Spu> $spuList List of SPUs
      */
     public function __construct(
         public int $total,

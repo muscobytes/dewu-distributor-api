@@ -14,11 +14,11 @@ class SaleAttr implements DtoInterface
     use FromArray;
 
     /**
-     * @param string $level
-     * @param string $cnName
-     * @param string $enName
-     * @param string $cnValue
-     * @param string $enValue
+     * @param string $level Sorting level
+     * @param string $cnName Chinese name
+     * @param string $enName English name
+     * @param string $cnValue Chinese value
+     * @param string $enValue English value
      */
     public function __construct(
         public string $level,
