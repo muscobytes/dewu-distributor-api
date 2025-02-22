@@ -1,0 +1,227 @@
+{
+    "id": 81,
+    "createTime": 1721810017000,
+    "modifyTime": 1737589176000,
+    "dwSpuId": 1121471,
+    "distSpuId": "f9dce62a-aa76-4c10-b803-986f15f3a9f4",
+    "distStatus": "PRODUCT_ON",
+    "dwSpuTitle": "Canada Goose加拿大鹅 Chelsea Whitehouse 派克连帽羽绒服 冬季 女款 石灰色",
+    "distSpuTitle": "Canada Goose Chelsea Whitehouse Down Jacket Winter Women's Lime Gray",
+    "dwDesignerId": "3804L-432",
+    "distBrandName": "Canada Goose",
+    "distCategoryl1Name": "Women's Apparel",
+    "distCategoryl2Name": "Coats",
+    "distCategoryl3Name": "Down Jackets",
+    "distFitPeopleName": "Women's",
+    "image": "https://cdn.poizon.com/pro-img/origin-img/20220525/bc870bb450aa4014ac346ffacba89d81.jpg",
+    "baseImage": [
+        "https://cdn.poizon.com/pro-img/origin-img/20220525/bc870bb450aa4014ac346ffacba89d81.jpg",
+        "https://cdn.poizon.com/node-common/JUU3JUE5JUJGJUU2JTkwJUFEJUU4JUJEJUFFJUU2JTkyJUFEJUU1JTlCJUJFMzE1OTkwMzY1OTE5Mzk=.jpg",
+        "https://cdn.poizon.com/node-common/JUU0JUJDJUEwJUU4JUJFJUJFJUU4JUJEJUFFJUU2JTkyJUFEJUU1JTlCJUJFMjE1OTkwMzY1OTE4OTM=.jpg",
+        "https://cdn.poizon.com/node-common/JUU0JUJDJUEwJUU4JUJFJUJFJUU4JUJEJUFFJUU2JTkyJUFEJUU1JTlCJUJFMTE1OTkwMzY1OTE5NzI=.jpg"
+    ],
+    "authPrice": 820000,
+    "season": "",
+    "material": "",
+    "style": "其他",
+    "sizeChart": "https://cdn.poizon.com/trade/gondor/10427636/20231128-0fcfafd120878ccf-w1440h1626.jpeg",
+    "productDesc": "",
+    "skuList": [
+        {
+            "id": 1009,
+            "createTime": 1721810017000,
+            "modifyTime": 1727102990000,
+            "distStatus": "PRODUCT_ON",
+            "dwSkuId": 600856305,
+            "distSkuId": "9da1f382-aa15-4a51-abd0-89cd5c534cf2",
+            "image": "https://cdn.poizon.com/pro-img/origin-img/20220525/bc870bb450aa4014ac346ffacba89d81.jpg",
+            "barcode": "",
+            "minBidPrice": 0,
+            "skuLink": "https://qiwuprocurementservice.myshoplaza.com/products/1121471?variant=9da1f382-aa15-4a51-abd0-89cd5c534cf2",
+            "saleAttr": [
+                {
+                    "level": "1",
+                    "cnName": "颜色",
+                    "enName": "Color",
+                    "cnValue": "石灰色",
+                    "enValue": "Lime Gray"
+                },
+                {
+                    "level": "2",
+                    "cnName": "尺码",
+                    "enName": "Size",
+                    "cnValue": "XXS",
+                    "enValue": "XXS"
+                }
+            ]
+        },
+        {
+            "id": 1010,
+            "createTime": 1721810017000,
+            "modifyTime": 1726843747000,
+            "distStatus": "PRODUCT_ON",
+            "dwSkuId": 600856306,
+            "distSkuId": "c182e854-08cd-49ce-b5e1-2ac0bfdbdfe0",
+            "image": "https://cdn.poizon.com/pro-img/origin-img/20220525/bc870bb450aa4014ac346ffacba89d81.jpg",
+            "barcode": "",
+            "minBidPrice": 0,
+            "skuLink": "https://qiwuprocurementservice.myshoplaza.com/products/1121471?variant=c182e854-08cd-49ce-b5e1-2ac0bfdbdfe0",
+            "saleAttr": [
+                {
+                    "level": "1",
+                    "cnName": "颜色",
+                    "enName": "Color",
+                    "cnValue": "石灰色",
+                    "enValue": "Lime Gray"
+                },
+                {
+                    "level": "2",
+                    "cnName": "尺码",
+                    "enName": "Size",
+                    "cnValue": "XS",
+                    "enValue": "XS"
+                }
+            ]
+        },
+        {
+            "id": 1011,
+            "createTime": 1721810017000,
+            "modifyTime": 1726843747000,
+            "distStatus": "PRODUCT_ON",
+            "dwSkuId": 600856307,
+            "distSkuId": "7a0a8b83-643d-452e-a4c8-3353d65324fa",
+            "image": "https://cdn.poizon.com/pro-img/origin-img/20220525/bc870bb450aa4014ac346ffacba89d81.jpg",
+            "barcode": "0801688582280",
+            "minBidPrice": 0,
+            "skuLink": "https://qiwuprocurementservice.myshoplaza.com/products/1121471?variant=7a0a8b83-643d-452e-a4c8-3353d65324fa",
+            "saleAttr": [
+                {
+                    "level": "1",
+                    "cnName": "颜色",
+                    "enName": "Color",
+                    "cnValue": "石灰色",
+                    "enValue": "Lime Gray"
+                },
+                {
+                    "level": "2",
+                    "cnName": "尺码",
+                    "enName": "Size",
+                    "cnValue": "S",
+                    "enValue": "S"
+                }
+            ]
+        },
+        {
+            "id": 37231116,
+            "createTime": 1722239030000,
+            "modifyTime": 1726672739000,
+            "distStatus": "PRODUCT_ON",
+            "dwSkuId": 600856309,
+            "distSkuId": "58266b01-4fd6-41af-a971-7fd63cb9afa6",
+            "image": "https://cdn.poizon.com/pro-img/origin-img/20220525/bc870bb450aa4014ac346ffacba89d81.jpg",
+            "barcode": "",
+            "minBidPrice": 0,
+            "skuLink": "https://qiwuprocurementservice.myshoplaza.com/products/1121471?variant=58266b01-4fd6-41af-a971-7fd63cb9afa6",
+            "saleAttr": [
+                {
+                    "level": "1",
+                    "cnName": "颜色",
+                    "enName": "Color",
+                    "cnValue": "石灰色",
+                    "enValue": "Lime Gray"
+                },
+                {
+                    "level": "2",
+                    "cnName": "尺码",
+                    "enName": "Size",
+                    "cnValue": "L",
+                    "enValue": "L"
+                }
+            ]
+        },
+        {
+            "id": 37231117,
+            "createTime": 1722239030000,
+            "modifyTime": 1727102990000,
+            "distStatus": "PRODUCT_ON",
+            "dwSkuId": 600856310,
+            "distSkuId": "a1d3777b-1678-4bde-87c0-18d8045595b6",
+            "image": "https://cdn.poizon.com/pro-img/origin-img/20220525/bc870bb450aa4014ac346ffacba89d81.jpg",
+            "barcode": "",
+            "minBidPrice": 0,
+            "skuLink": "https://qiwuprocurementservice.myshoplaza.com/products/1121471?variant=a1d3777b-1678-4bde-87c0-18d8045595b6",
+            "saleAttr": [
+                {
+                    "level": "1",
+                    "cnName": "颜色",
+                    "enName": "Color",
+                    "cnValue": "石灰色",
+                    "enValue": "Lime Gray"
+                },
+                {
+                    "level": "2",
+                    "cnName": "尺码",
+                    "enName": "Size",
+                    "cnValue": "XL",
+                    "enValue": "XL"
+                }
+            ]
+        },
+        {
+            "id": 37231118,
+            "createTime": 1722239030000,
+            "modifyTime": 1727102990000,
+            "distStatus": "PRODUCT_ON",
+            "dwSkuId": 600856308,
+            "distSkuId": "3b54cc21-1593-4e62-a908-4a53cabeb961",
+            "image": "https://cdn.poizon.com/pro-img/origin-img/20220525/bc870bb450aa4014ac346ffacba89d81.jpg",
+            "barcode": "",
+            "minBidPrice": 0,
+            "skuLink": "https://qiwuprocurementservice.myshoplaza.com/products/1121471?variant=3b54cc21-1593-4e62-a908-4a53cabeb961",
+            "saleAttr": [
+                {
+                    "level": "1",
+                    "cnName": "颜色",
+                    "enName": "Color",
+                    "cnValue": "石灰色",
+                    "enValue": "Lime Gray"
+                },
+                {
+                    "level": "2",
+                    "cnName": "尺码",
+                    "enName": "Size",
+                    "cnValue": "M",
+                    "enValue": "M"
+                }
+            ]
+        },
+        {
+            "id": 37231119,
+            "createTime": 1722239030000,
+            "modifyTime": 1726843747000,
+            "distStatus": "PRODUCT_ON",
+            "dwSkuId": 600856311,
+            "distSkuId": "f096b74d-56cf-4b7b-b6bd-4708ab07e7dc",
+            "image": "https://cdn.poizon.com/pro-img/origin-img/20220525/bc870bb450aa4014ac346ffacba89d81.jpg",
+            "barcode": "",
+            "minBidPrice": 0,
+            "skuLink": "https://qiwuprocurementservice.myshoplaza.com/products/1121471?variant=f096b74d-56cf-4b7b-b6bd-4708ab07e7dc",
+            "saleAttr": [
+                {
+                    "level": "1",
+                    "cnName": "颜色",
+                    "enName": "Color",
+                    "cnValue": "石灰色",
+                    "enValue": "Lime Gray"
+                },
+                {
+                    "level": "2",
+                    "cnName": "尺码",
+                    "enName": "Size",
+                    "cnValue": "XXL",
+                    "enValue": "XXL"
+                }
+            ]
+        }
+    ]
+}
