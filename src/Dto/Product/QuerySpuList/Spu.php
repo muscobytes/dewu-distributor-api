@@ -10,6 +10,7 @@ use Muscobytes\Poizon\DistributionApiClient\Enums\SeasonEnum;
 use Muscobytes\Poizon\DistributionApiClient\Enums\StatusEnum;
 use Muscobytes\Poizon\DistributionApiClient\Interfaces\DtoInterface;
 use Muscobytes\Poizon\DistributionApiClient\Traits\Array\FromArray;
+use Muscobytes\Poizon\DistributionApiClient\Traits\DateTime\FromMilliseconds;
 use Postfriday\Castable\Attributes\CastWith;
 use Postfriday\Castable\Casters\DateTimeCaster;
 use Postfriday\Castable\Traits\ToArray;
@@ -18,6 +19,7 @@ class Spu implements DtoInterface
 {
     use ToArray;
     use FromArray;
+    use FromMilliseconds;
 
     /**
      * @param int $id ID
@@ -37,9 +39,7 @@ class Spu implements DtoInterface
      * @param string $image Image of logo
      * @param array<string> $baseImage Basic image
      * @param int $authPrice Retail price
-     * @param int $sellDate Release date
-     * @param string $sizeContext Size text
-     * @param string $sizeImage Image of size
+     * @param DateTimeInterface|null $sellDate Release date
      * @param array<SeasonEnum> $season Season
      * @param string $material Material
      * @param string $style Style
@@ -52,10 +52,10 @@ class Spu implements DtoInterface
         public int $id,
 
         #[CastWith(DateTimeCaster::class, [DateTimeInterface::RFC3339])]
-        public DateTimeImmutable $createTime,
+        public DateTimeInterface $createTime,
 
         #[CastWith(DateTimeCaster::class, [DateTimeInterface::RFC3339])]
-        public DateTimeImmutable $modifyTime,
+        public DateTimeInterface $modifyTime,
 
         public int $dwSpuId,
 
@@ -85,11 +85,8 @@ class Spu implements DtoInterface
 
         public int $authPrice,
 
-        public int $sellDate,
-
-        public string $sizeContext,
-
-        public string $sizeImage,
+        #[CastWith(DateTimeCaster::class, [DateTimeInterface::RFC3339])]
+        public ?DateTimeInterface $sellDate,
 
         public array $season,
 
@@ -105,5 +102,45 @@ class Spu implements DtoInterface
     )
     {
         //
+    }
+
+
+    public static function fromArray(array $array): self
+    {
+        return new self(
+            id: $array['id'],
+            createTime: self::fromMilliseconds($array['createTime']),
+            modifyTime: self::fromMilliseconds($array['modifyTime']),
+            dwSpuId: $array['dwSpuId'],
+            distSpuId: $array['distSpuId'],
+            distStatus: StatusEnum::from($array['distStatus']),
+            dwSpuTitle: $array['dwSpuTitle'],
+            distSpuTitle: $array['distSpuTitle'],
+            dwDesignerId: $array['dwDesignerId'],
+            distBrandName: $array['distBrandName'],
+            distCategoryl1Name: $array['distCategoryl1Name'],
+            distCategoryl2Name: $array['distCategoryl2Name'],
+            distCategoryl3Name: $array['distCategoryl3Name'],
+            distFitPeopleName: $array['distFitPeopleName'],
+            image: $array['image'],
+            baseImage: $array['baseImage'],
+            authPrice: $array['authPrice'],
+            sellDate: key_exists('sellDate', $array) ? self::fromMilliseconds($array['sellDate']) : null,
+            season: array_map(
+                callback: fn ($item) => SeasonEnum::from($item),
+                array: array_filter(
+                    array: explode(',', $array['season']),
+                    callback: fn ($item) => !empty($item)
+                )
+            ),
+            material: $array['material'],
+            style: $array['style'],
+            sizeChart: $array['sizeChart'],
+            productDesc: $array['productDesc'],
+            skuList: array_map(
+                callback: fn ($item) => Sku::fromArray($item),
+                array: $array['skuList']
+            )
+        );
     }
 }

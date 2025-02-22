@@ -24,4 +24,16 @@ class SpuListData implements DtoInterface
     {
         //
     }
+
+
+    public static function fromArray(array $array): self
+    {
+        return new self(
+            total: $array['total'],
+            spuList: array_map(
+                callback: fn ($item) => Spu::fromArray($item),
+                array: $array['spuList']
+            ),
+        );
+    }
 }
