@@ -8,4 +8,6 @@ enum SeasonEnum: string
     case SUMMER = '夏';
     case AUTUMN = '秋';
     case WINTER = '冬';
+
+    case UNIVERSAL = '通用';
 }
